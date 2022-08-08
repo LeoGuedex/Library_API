@@ -4,29 +4,27 @@ import com.leoguedex.libraryapi.entities.Book;
 import com.leoguedex.libraryapi.exception.BusinessException;
 import com.leoguedex.libraryapi.repositories.BookRepository;
 import com.leoguedex.libraryapi.services.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class BookServiceImpl implements BookService {
+public class BookServiceImp implements BookService {
 
+    @Autowired
     private final BookRepository bookRepository;
 
-    public BookServiceImpl(BookRepository
-        bookRepository) {
+    public BookServiceImp(BookRepository bookRepository) {
         this.bookRepository
             = bookRepository;
     }
-
-
 
     @Override
     public Book save(Book book) {
         if (bookRepository.existsByIsbn(book.getIsbn())){
             throw new BusinessException   ("ISBN já cadastrado");
         }
-
         return bookRepository.save(book);
     }
 

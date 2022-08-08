@@ -4,7 +4,7 @@ import com.leoguedex.libraryapi.entities.Book;
 import com.leoguedex.libraryapi.exception.BusinessException;
 import com.leoguedex.libraryapi.repositories.BookRepository;
 import com.leoguedex.libraryapi.services.BookService;
-import com.leoguedex.libraryapi.services.impl.BookServiceImpl;
+import com.leoguedex.libraryapi.services.impl.BookServiceImp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -28,7 +28,7 @@ public class BookServiceTest {
 
     @BeforeEach
     public void setup() {
-        this.bookService = new BookServiceImpl(bookRepository);
+        this.bookService = new BookServiceImp(bookRepository);
     }
 
     @Test
