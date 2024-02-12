@@ -1,5 +1,6 @@
 package com.leoguedex.libraryapi.entities;
 
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +24,6 @@ public class Book {
     private String author;
 
     private String isbn;
+
+    private LocalDate dtLancamento;
 }
